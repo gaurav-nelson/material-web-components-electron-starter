@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
+  <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <div class="mdc-toolbar mdc-toolbar--fixed">
+    <div class="mdc-toolbar__row">
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+        <button class="demo-menu material-icons mdc-toolbar__icon--menu">menu</button>
+        <span class="mdc-toolbar__title catalog-title">Material Web Components</span>
+      </section>
+    </div>
+  </div>
+
+  <aside class="mdc-temporary-drawer">
+    <nav class="mdc-temporary-drawer__drawer">
+      <header class="mdc-temporary-drawer__header">
+        <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+          Material Web Components
+        </div>
+      </header>
+      <nav class="mdc-temporary-drawer__content mdc-list-group">
+        <div id="icon-with-text-demo" class="mdc-list">
+          <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+            </a>
+          <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+            </a>
+          <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">send</i>Sent Mail
+            </a>
+          <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">drafts</i>Drafts
+            </a>
+        </div>
+
+        <hr class="mdc-list-divider">
+
+        <div class="mdc-list">
+          <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
+            </a>
+          <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">delete</i>Trash
+            </a>
+          <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">report</i>Spam
+            </a>
+        </div>
+      </nav>
+    </nav>
+  </aside>
+  <main class="mdc-toolbar-fixed-adjust">
+    <div class="mdc-layout-grid">
+        <h2 class="mdc-typography--display2">Hello World!</h2>
+        <!-- All of the Node.js APIs are available in this renderer process. -->
+        We are using Node.js
+        <script>
+          document.write(process.versions.node)
+        </script>, Chromium
+        <script>
+          document.write(process.versions.chrome)
+        </script>, and Electron
+        <script>
+          document.write(process.versions.electron)
+        </script>.
+        <form action="#" id="greeting-form">
+          <div>
+            <div class="mdc-form-field">
+              <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                <input id="firstname" type="text" class="mdc-textfield__input">
+                <label for="firstname" class="mdc-textfield__label">
+            First Name
+          </label>
+              </div>
+            </div>
+
+            <div class="mdc-form-field">
+              <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                <input id="lastname" type="text" class="mdc-textfield__input">
+                <label for="lastname" class="mdc-textfield__label">
+            Last Name
+          </label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="mdc-button
+                   mdc-button--raised
+                   mdc-button--primary
+                   mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
+      Print Greeting
+    </button>
+        </form>
+        <p class="mdc-typography--headline" id="greeting"></p>
+      </div>
+  </main>
+</body>
+
+<script>
+  // You can also require other files to run in this process
+  require('./renderer.js')
+</script>
+
+</html>

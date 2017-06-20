@@ -1,0 +1,27 @@
+{
+  "name": "material-web-components-electron-starter",
+  "version": "1.0.0",
+  "description": "A minimal Electron application with Material Components for Web",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/gaurav-nelson/material-web-components-electron-starter",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "material design",
+    "components"
+  ],
+  "author": "Gaurav Nelson",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "material-components-web": "^0.13.0"
+  }
+}
