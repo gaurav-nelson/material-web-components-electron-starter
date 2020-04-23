@@ -19,9 +19,13 @@
   "author": "Gaurav Nelson",
   "license": "MIT",
   "devDependencies": {
-    "electron": "8.2.3"
+    "electron": "8.2.3",
+    "electron-builder": "^22.5.1"
   },
   "dependencies": {
     "material-components-web": ">=5.1.0"
+  },
+  "build": {
+    "appId": "material-web-components-electron-starter"
   }
 }
