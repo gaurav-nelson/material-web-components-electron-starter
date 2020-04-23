@@ -1,6 +1,6 @@
 {
   "name": "material-web-components-electron-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal Electron application with Material Components for Web",
   "main": "main.js",
   "scripts": {
@@ -22,6 +22,6 @@
     "electron": "8.2.3"
   },
   "dependencies": {
-    "material-components-web": ">=3.2.0"
+    "material-components-web": ">=5.1.0"
   }
 }
