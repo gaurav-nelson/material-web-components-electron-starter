@@ -1,0 +1,19 @@
+html, body {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .demo-headline {
+    margin-bottom: 32px;
+    margin-top:96px;
+  }
+  
+  .mdc-text-field {
+    margin-bottom: 24px;
+    flex-shrink: 0;
+  }
+  
+  .greet-message {
+    margin-top: 48px; 
+  }

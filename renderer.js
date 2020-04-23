@@ -3,35 +3,29 @@
 // All of the Node.js APIs are available in this process.
 mdc.autoInit();
 
-document.getElementById('greeting-form').addEventListener('submit', function (evt) {
-    evt.preventDefault();
-    var firstname = evt.target.elements.firstname.value;
-    var lastname = evt.target.elements.lastname.value;
-    var greeting = 'Hello';
-    if (firstname || lastname) {
-        greeting += ', ';
-        if (firstname && lastname) {
-            greeting += firstname + ' ' + lastname;
-        } else if (lastname) {
-            greeting += 'Mx. ' + lastname;
-        } else {
-            greeting += firstname;
-        }
-    }
-    greeting += '!';
+/** Initialize MDC Web components. */
+const buttons = document.querySelectorAll('.mdc-button');
+for (const button of buttons) {
+  mdc.ripple.MDCRipple.attachTo(button);
+}
 
-    document.getElementById('greeting').textContent = greeting;
+const textFields = document.querySelectorAll('.mdc-text-field');
+for (const textField of textFields) {
+  mdc.textField.MDCTextField.attachTo(textField);
+}
+
+/** Custom javascript code. */
+const greetMessageEl = document.querySelector('.greet-message');
+const greetButton = document.querySelector('.greet-button');
+greetButton.addEventListener('click', () => {
+  const firstNameInput = document.querySelector('.first-name-input').value;
+  const lastNameInput = document.querySelector('.last-name-input').value;
+  let name;
+  if (firstNameInput || lastNameInput) {
+    name = firstNameInput + ' ' + lastNameInput;
+  } else {
+    name = 'Anonymous';
+  }
+  greetMessageEl.textContent = `Hello, ${name}!`;
 });
 
-var drawerEl = document.querySelector('.mdc-temporary-drawer');
-var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
-var drawer = new MDCTemporaryDrawer(drawerEl);
-document.querySelector('.demo-menu').addEventListener('click', function () {
-    drawer.open = true;
-});
-drawerEl.addEventListener('MDCTemporaryDrawer:open', function () {
-    console.log('Received MDCTemporaryDrawer:open');
-});
-drawerEl.addEventListener('MDCTemporaryDrawer:close', function () {
-    console.log('Received MDCTemporaryDrawer:close');
-});

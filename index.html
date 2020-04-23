@@ -8,107 +8,47 @@
   <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="./app.css"  />
 </head>
 
 <body>
-  <div class="mdc-toolbar mdc-toolbar--fixed">
-    <div class="mdc-toolbar__row">
-      <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-        <button class="demo-menu material-icons mdc-toolbar__icon--menu">menu</button>
-        <span class="mdc-toolbar__title catalog-title">Material Web Components</span>
+  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+        <span class="mdc-top-app-bar__title">Material Web Components</span>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
       </section>
     </div>
+  </header>
+
+  <h3 class="mdc-typography mdc-typography--headline3 demo-headline">Hello World!</h3>
+
+  <div class="mdc-text-field">
+    <input type="text" id="my-text-field" class="mdc-text-field__input first-name-input">
+    <label class="mdc-floating-label" for="my-text-field">First name</label>
+    <div class="mdc-line-ripple"></div>
   </div>
 
-  <aside class="mdc-temporary-drawer">
-    <nav class="mdc-temporary-drawer__drawer">
-      <header class="mdc-temporary-drawer__header">
-        <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
-          Material Web Components
-        </div>
-      </header>
-      <nav class="mdc-temporary-drawer__content mdc-list-group">
-        <div id="icon-with-text-demo" class="mdc-list">
-          <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
-              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
-            </a>
-          <a class="mdc-list-item" href="#">
-              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
-            </a>
-          <a class="mdc-list-item" href="#">
-              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">send</i>Sent Mail
-            </a>
-          <a class="mdc-list-item" href="#">
-              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">drafts</i>Drafts
-            </a>
-        </div>
+  <div class="mdc-text-field">
+    <input type="text" id="my-text-field" class="mdc-text-field__input last-name-input">
+    <label class="mdc-floating-label" for="my-text-field" >Last name</label>
+    <div class="mdc-line-ripple"></div>
+  </div>
+  <button class="mdc-button greet-button">
+    <div class="mdc-button__ripple"></div>
+    <div class="mdc-button__label">Greet</div>
+  </button>
 
-        <hr class="mdc-list-divider">
-
-        <div class="mdc-list">
-          <a class="mdc-list-item" href="#">
-              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
-            </a>
-          <a class="mdc-list-item" href="#">
-              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">delete</i>Trash
-            </a>
-          <a class="mdc-list-item" href="#">
-              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">report</i>Spam
-            </a>
-        </div>
-      </nav>
-    </nav>
-  </aside>
-  <main class="mdc-toolbar-fixed-adjust">
-    <div class="mdc-layout-grid">
-        <h2 class="mdc-typography--display2">Hello World!</h2>
-        <!-- All of the Node.js APIs are available in this renderer process. -->
-        We are using Node.js
-        <script>
-          document.write(process.versions.node)
-        </script>, Chromium
-        <script>
-          document.write(process.versions.chrome)
-        </script>, and Electron
-        <script>
-          document.write(process.versions.electron)
-        </script>.
-        <form action="#" id="greeting-form">
-          <div>
-            <div class="mdc-form-field">
-              <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
-                <input id="firstname" type="text" class="mdc-textfield__input">
-                <label for="firstname" class="mdc-textfield__label">
-            First Name
-          </label>
-              </div>
-            </div>
-
-            <div class="mdc-form-field">
-              <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
-                <input id="lastname" type="text" class="mdc-textfield__input">
-                <label for="lastname" class="mdc-textfield__label">
-            Last Name
-          </label>
-              </div>
-            </div>
-          </div>
-
-          <button type="submit" class="mdc-button
-                   mdc-button--raised
-                   mdc-button--primary
-                   mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
-      Print Greeting
-    </button>
-        </form>
-        <p class="mdc-typography--headline" id="greeting"></p>
-      </div>
-  </main>
-</body>
+  <div class="mdc-typography mdc-typography--overline greet-message"></div>
 
 <script>
   // You can also require other files to run in this process
   require('./renderer.js')
 </script>
-
+</body>
 </html>
