@@ -19,7 +19,7 @@
   "author": "Gaurav Nelson",
   "license": "MIT",
   "devDependencies": {
-    "electron": "8.2.4"
+    "electron": "8.4.0"
   },
   "dependencies": {
     "material-components-web": ">=3.2.0"
